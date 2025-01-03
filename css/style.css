@@ -16,11 +16,103 @@
   --Dark-Grayish-Blue: hsl(217, 19%, 24%);
   --Dark-Blue: hsl(218, 23%, 16%);
 
+  --card-border-radius: 0.9rem;
   --Quote-font-size: 1.75rem;
   --font-weight: 800;
+
+  --card-padding: 1rem 1rem;
+  --transition: all 400ms ease;
 }
 
 body {
+  font-family: "Manrope", serif;
   background-color: var(--Dark-Blue);
   color: var(--Light-Cyan);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  text-align: center;
+  width: 30%;
+  background-color: var(--Dark-Grayish-Blue);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  position: relative;
+}
+
+#advice-id {
+  letter-spacing: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--Neon-Green);
+  font-weight: var(--font-weight);
+}
+
+#advice-body {
+  font-size: var(--Quote-font-size);
+}
+
+#advice-body::before {
+  content: open-quote;
+  vertical-align: 0.5rem;
+  font-size: 2rem;
+}
+
+#advice-body::after {
+  content: close-quote;
+  vertical-align: -1.5rem;
+  font-size: 2rem;
+}
+
+#divider {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.dice-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2rem;
+  background-color: var(--Neon-Green);
+  padding: 1rem;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+#dice {
+  width: 100%;
+  height: 100%;
+}
+
+.dice-container:hover {
+  box-shadow: 0px 10px 50px 5px var(--Neon-Green);
+}
+
+#advice-id,
+#advice-body {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    width: 85%;
+  }
 }
